@@ -80,10 +80,10 @@ const cardTwo = data => {
 	});
 	return data.results.map(serie => {
 		return (`
-		<div class="card card-serie col-3 m-2" style="max-width: 540px;">
+		<div class="card card-serie col-3 m-2">
 			<span class="d-none link-serie">${serie.name}</span>
 		  <div class="row no-gutters">
-		    <div class="col-md-4">
+		    <div class="col-12">
 		      <img src="${serie.thumb}" class="card-img" alt="${serie.title}">
 		    </div>
 		    <div class="col-md-8">
@@ -112,15 +112,15 @@ const modalSerie = serie => {
 	      <div class="modal-body">
 		      <div class="container-fluid">
 		        <div class="row">
-							<div class="col-12 mb-2">
-								<img src="${serie.thumb}" alt="${serie.title}" class="col-6 offset-3">
-								<div class="col-6 offset-3">
-									<span class="badge badge-info">${serie.category}</span>
-			        		<p>${serie.visits} visitas</p>
-								</div>
-							</div>
-			        
-							<p>${serie.description}</p>
+					<div class="col-12 mb-2">
+						<img src="${serie.thumb}" alt="${serie.title}" class="col-6 offset-3">
+						<div class="col-6 offset-3">
+							<span class="badge badge-info">${serie.category}</span>
+	        		<p>${serie.visits} visitas</p>
+						</div>
+					</div>
+	        
+					<p>${serie.description}</p>
 
 		        </div>
 		      </div>

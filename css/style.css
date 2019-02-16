@@ -1,3 +1,8 @@
 .card-serie {
 	cursor: pointer;
+	box-shadow: 0px 1px 7px gray;
+}
+
+.card-serie:hover {
+	box-shadow: 2px 2px 8px #000;
 }
