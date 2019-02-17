@@ -5,4 +5,5 @@
 
 .card-serie:hover {
 	box-shadow: 2px 2px 8px #000;
+	transition: 0.6s ease;
 }
