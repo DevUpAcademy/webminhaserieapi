@@ -14,16 +14,27 @@ $(function() {
 		$('.searchForm').submit(function(e) {
 			e.preventDefault()
 			console.log(this.textSearch.value)
-
-			fetch(`${apiURL}/search/${this.textSearch.value}`)
+			
+			if(this.textSearch.value.length > 0) {
+				fetch(`${apiURL}/search/${this.textSearch.value}`)
 				.then(res => res.json())
 				.then(data => {
 					$('.top-series').empty()
 					$('.top-series').append(cardTwo(data))
 				})
 				.catch((err) => {
-					$('.top-series').append('Falha')
+					console.log(err)
 				})
+			} else {
+				$('#info').append(`
+					<div class="alert alert-warning alert-dismissible fade show" role="alert">
+						<strong>Não entendi,</strong> vai ficar dificil se não informar o que você quer pesquisar :/
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					    <span aria-hidden="true">&times;</span>
+					  </button>
+					</div>
+					`)
+			}
 		})
 });
 
