@@ -20,7 +20,18 @@ $(function() {
 				.then(res => res.json())
 				.then(data => {
 					$('.top-series').empty()
-					$('.top-series').append(cardTwo(data))
+					if (data.count <= 0) {
+						$('#info').append(`
+							<div class="alert alert-warning alert-dismissible fade show" role="alert">
+								<strong>Nenhum serie encontrada,</strong> verifique sua pesquisa ou tente novamente.
+							  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							    <span aria-hidden="true">&times;</span>
+							  </button>
+							</div>
+							`)
+					} else {
+						$('.top-series').append(cardTwo(data))
+					}
 				})
 				.catch((err) => {
 					console.log(err)
