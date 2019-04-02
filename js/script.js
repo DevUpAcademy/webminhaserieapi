@@ -46,7 +46,7 @@ const cardOne = data => {
 		$('.card-serie').click(function(e) {
 			$('#serieModal').empty()
 			let name = $(this).find('.link-serie').text()
-			fetch(`${apiURL}/serie/${name}`)
+			fetch(`${apiURL}/series/${name}`)
 				.then(res => res.json())
 				.then(data => {
 					console.log(data)
@@ -82,7 +82,7 @@ const cardTwo = data => {
 		$('.card-serie').click(function(e) {
 			$('#serieModal').empty()
 			let name = $(this).find('.link-serie').text()
-			fetch(`${apiURL}/serie/${name}`)
+			fetch(`${apiURL}/series/${name}`)
 				.then(res => res.json())
 				.then(data => {
 					console.log(data)
