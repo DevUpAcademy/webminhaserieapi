@@ -1,6 +1,21 @@
 const apiURL = 'https://minhaserieapi.herokuapp.com'
 
 $(function() {
+	$( "[name='textSearch']" ).keyup(function() {
+		fetch(`${apiURL}/search/${this.value}`).then(res => res.json())
+		.then(data => {
+			$('.top-series').empty()
+			if (data.count <= 0) {
+				//	
+			} else {
+				$('.top-series').append(cardTwo(data))
+			}
+		})
+		.catch((err) => {
+			console.log(err)
+		})
+	})
+
 	console.log('Start');
 	fetch(`${apiURL}/series`)
 		.then(res => res.json())
@@ -62,7 +77,7 @@ const cardOne = data => {
 		<span class="d-none link-serie">${serie.name}</span>
 		  <div class="row no-gutters">
 		    <div class="col-md-4">
-		      <img src="${serie.thumb}" class="card-img" alt="${serie.title}">
+		      <img src="${serie.thumb}" class="card-img card-img-one ml-2" alt="${serie.title}">
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">

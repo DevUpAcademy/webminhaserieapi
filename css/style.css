@@ -1,9 +1,21 @@
 .card-serie {
 	cursor: pointer;
-	box-shadow: 0px 1px 7px gray;
+	box-shadow: 0px 1px 7px rgb(61, 61, 61, .2);
+	transition: box-shadow 0.6s;
 }
 
 .card-serie:hover {
-	box-shadow: 2px 2px 8px #000;
-	transition: 0.6s ease;
+	box-shadow: 2px 2px 8px rgb(61, 61, 61, .6);
+	transition: box-shadow 0.6s ease;
+	transition: transform .4s;
+	transform: perspective(200px) rotateY(0.6deg) rotateZ(0.6deg) rotateX(0.4deg);
+}
+
+.card-img {
+	border: dashed 2px rgb(50, 6, 56);
+}
+
+.card-img-one {
+	position: absolute;
+	top: 10%;
 }
